@@ -24,6 +24,10 @@ export const useCountries = () => {
                   _id
                   name
                 }
+                location{
+                  latitude
+                  longitude
+                }
               }
         }
         `

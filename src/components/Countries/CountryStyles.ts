@@ -15,7 +15,7 @@ margin-bottom: 1%;
 
 export const CardWrapper = styled.div`
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
+  transition: 300ms;
   width: 80%;
   height: 90%;
   padding: 10px;
@@ -34,4 +34,17 @@ export const Header = styled.h2`
 export const Information = styled.section`
   color: black;
   font-weight: 300;
+`;
+
+export const Link = styled.p`
+  color: black;
+  font-weight: 300;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 300ms;
+  padding: 4px;
+  &:hover{
+    background-color: #f2f2f2;
+
+  }
 `;

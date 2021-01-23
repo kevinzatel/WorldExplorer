@@ -148,6 +148,10 @@ const App = () => {
         subRegion: country.subregion.name,
         capital: country.capital,
         population: country.population,
+        location: {
+          latitude: country.location.latitude,
+          longitude: country.location.longitude,
+        },
       });
     });
     setCountriesToDisplay(countriesToDisplay);

@@ -1,3 +1,5 @@
+import { Location }from '../models/location';
+
 export interface CountryTotalInfo{
     _id: string
     name: string
@@ -19,4 +21,5 @@ export interface CountryTotalInfo{
         _id: string
         name:string
     }
+    location: Location
 }
