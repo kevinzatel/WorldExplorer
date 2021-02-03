@@ -10,6 +10,20 @@ export const Background = styled.div`
   outline: 0;
 `;
 
+export const Header = styled.div`
+  text-align: right;
+`; 
+
+export const Icon = styled.button`
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  margin: auto;
+  &:active {
+    outline: none;
+  }
+`;
+
 export const Content = styled.div`
   background-color: #fefefe;
   margin: auto;

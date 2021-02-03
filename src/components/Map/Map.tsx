@@ -9,7 +9,7 @@ interface IProps {
 
 const Map: FC<IProps> = ({ lat, lng }) => {
   const containerStyle = {
-    height: "400px",
+    height: "450px",
   };
 
   return (
