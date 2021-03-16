@@ -48,7 +48,6 @@ export const Icon = styled.button`
   margin: auto;
   cursor: pointer;
   border-radius: 20px;
-  transition: 300ms;
   padding: 4px;
   &:hover{
     background-color: #f2f2f2;

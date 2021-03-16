@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-import { mapsKey } from "../../credentials/credentials";
 
 interface IProps {
   lat: number;
@@ -13,7 +12,7 @@ const Map: FC<IProps> = ({ lat, lng }) => {
   };
 
   return (
-    <LoadScript googleMapsApiKey={mapsKey}>
+    <LoadScript googleMapsApiKey={process.env.REACT_APP_MAPS_KEY!}>
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={{ lat, lng }}
