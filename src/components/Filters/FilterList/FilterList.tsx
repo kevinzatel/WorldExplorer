@@ -1,19 +1,12 @@
-import React, { FC } from "react";
-import { Filter } from "../../../models/filter";
+import { FC } from "react";
 import { FilterTypeWithOptions } from "../../../models/filterTypeWithOptions";
 import FilterItem from "../FilterItem/FilterItem";
 
 interface IProps {
   filterTypeWithOptionsList: FilterTypeWithOptions[];
-  selectedFilter?: Filter;
-  setSelectedFilter: (filter?: Filter) => void;
 }
 
-const FilterList: FC<IProps> = ({
-  filterTypeWithOptionsList,
-  setSelectedFilter,
-  selectedFilter,
-}) => {
+const FilterList: FC<IProps> = ({ filterTypeWithOptionsList }) => {
   return (
     <>
       {filterTypeWithOptionsList.map(
@@ -23,8 +16,6 @@ const FilterList: FC<IProps> = ({
               key={index}
               type={filterTypeWithOptions.type}
               options={filterTypeWithOptions.options}
-              setSelectedFilter={setSelectedFilter}
-              selectedFilter={selectedFilter}
               data-testid="filter-item"
             />
           );

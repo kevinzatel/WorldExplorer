@@ -55,11 +55,9 @@ interface IFormProps {
     color: grey;
   `;
   
-  export const Icon = styled.img`
-    src: ${({ src }) => src};
-    width: 30px;
-    margin-top: 3px;
-    margin-left: 3px;
+  export const SearchIcon = styled.div`
+    margin-top: 5px;
+    margin-left: 5px;
   `;
   
   export const ErrorMessage = styled.p`

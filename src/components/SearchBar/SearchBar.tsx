@@ -1,5 +1,4 @@
 import React, { useState, useRef, FormEvent, FC } from "react";
-import searchIcon from "../../images/search-icon.png";
 import {
   EMPTY_SEARCH_ERR_MSG,
   SEARCH_BAR_PLACEHOLDER,
@@ -9,9 +8,10 @@ import {
   ErrorMessage,
   Form,
   FormContainer,
-  Icon,
+  SearchIcon,
   Input,
 } from "./SearchBarStyles";
+import { BiSearchAlt } from "react-icons/bi";
 
 interface IProps {
   onSearchSubmit: (searchTerm: string) => void;
@@ -63,7 +63,9 @@ const SearchBar: FC<IProps> = ({ onSearchSubmit }) => {
           data-testid="search-form"
         >
           <Button type="submit" barOpened={barOpened}>
-            <Icon src={searchIcon} />
+            <SearchIcon>
+              <BiSearchAlt size="30" />
+            </SearchIcon>
           </Button>
           <Input
             onChange={(e) => setSearchTerm(e.target.value)}

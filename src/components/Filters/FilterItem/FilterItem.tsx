@@ -1,20 +1,19 @@
-import React, { FC } from "react";
-import { Filter } from "../../../models/filter";
+import React, { FC, useContext } from "react";
+import {
+  SelectedFilterContext,
+  SetSelectedFilterContext,
+} from "../../../contexts/FilterContext";
 import { Select } from "./FilterItemStyles";
 
 interface IProps {
   options: any[];
-  selectedFilter?: Filter;
-  setSelectedFilter: (filter?: Filter) => void;
   type: string;
 }
 
-const FilterItem: FC<IProps> = ({
-  options,
-  selectedFilter,
-  setSelectedFilter,
-  type,
-}) => {
+const FilterItem: FC<IProps> = ({ options, type }) => {
+  const setSelectedFilter = useContext(SetSelectedFilterContext);
+  const selectedFilter = useContext(SelectedFilterContext);
+
   return (
     <Select
       value={selectedFilter?.type === type ? selectedFilter.id : "0"}

@@ -9,6 +9,11 @@ export const Select = styled.select`
   font-size: 14px;
   border: none;
   margin-left: 10px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #f2f2f2;
+  border-radius: 0.5rem;
   transition: 300ms;
   &:focus,
   &:active {
@@ -18,18 +23,11 @@ export const Select = styled.select`
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
   }
 
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  background-color: #f2f2f2;
-  border-radius: 0.5rem;
-
   option {
     color: grey;
     background: white;
     display: flex;
     white-space: pre;
     min-height: 20px;
-    padding: 0px 2px 1px;
   }
 `;
