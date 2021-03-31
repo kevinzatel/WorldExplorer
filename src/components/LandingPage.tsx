@@ -1,5 +1,14 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
-import { Container } from "../AppStyles";
+import React, {
+  FC,
+  Ref,
+  RefObject,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import CountryList from "./Countries/CountryList";
 import SearchBar from "./SearchBar/SearchBar";
 import { useCountries } from "../hooks/useCountries";
@@ -23,8 +32,9 @@ import {
   SelectedFilterContext,
   SetSelectedFilterContext,
 } from "../contexts/FilterContext";
+import { NAV_BAR_HEIGHT } from "./NavBar/NavBar";
 
-const LandingPage = () => {
+const LandingPage: FC = () => {
   const { countryData, countryLoading, countryError } = useCountries();
   const [countryList, setCountryList] = useState<CountryTotalInfo[]>([]);
   const [countriesToDisplay, setCountriesToDisplay] = useState<
@@ -41,8 +51,14 @@ const LandingPage = () => {
   }, [countryData]);
 
   useEffect(() => {
-    if (countriesToDisplay.length > 0 && searchBarRef.current)
-      searchBarRef!.current!.scrollIntoView({ behavior: "smooth" });
+    if (countriesToDisplay.length > 0 && searchBarRef.current) {
+      const scrollPosition =
+        searchBarRef.current!.offsetTop! - NAV_BAR_HEIGHT - 10;
+      window.scrollTo({
+        top: scrollPosition,
+        behavior: "smooth",
+      });
+    }
   }, [countriesToDisplay]);
 
   useEffect(() => {
@@ -140,13 +156,13 @@ const LandingPage = () => {
   };
 
   return (
-    <Container>
+    <>
       {countryLoading && <Spinner text={LOADING_COUNTRIES_MESSAGE} />}
       {countryError && <Error text={FETCH_COUNTRIES_ERROR} />}
       {!countryLoading && !countryError && (
         <>
           {<Header />}
-          <div ref={searchBarRef} style={{ padding: "5px" }} />
+          <div id="searchBar" ref={searchBarRef} style={{ padding: "5px" }} />
           <SearchBar onSearchSubmit={onSearchSubmit} />
           <FilterList filterTypeWithOptionsList={filterTypesWithOptions} />
           {noCountryFound && <h2>{NO_COUNTRY_FOUND_MESSAGE}</h2>}
@@ -155,7 +171,7 @@ const LandingPage = () => {
           )}
         </>
       )}
-    </Container>
+    </>
   );
 };
 

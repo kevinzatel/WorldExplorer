@@ -28,7 +28,6 @@ interface IProps {
 }
 
 const FilterProvider: FC<IProps> = ({ children }) => {
-  console.log(children);
   const { languageData } = useLanguage();
   const { currencyData } = useCurrency();
   const { regionData } = useRegion();

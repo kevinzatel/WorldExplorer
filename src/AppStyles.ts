@@ -4,6 +4,6 @@ export const Container = styled.div`
   margin: auto;
   width: 80%;
   heigh: auto;
-  padding: 10px;
+  padding: 50px;
   text-align: center;
 `;
