@@ -1,14 +1,4 @@
-import React, {
-  FC,
-  Ref,
-  RefObject,
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
+import React, { FC, useContext, useEffect, useRef, useState } from "react";
 import CountryList from "./Countries/CountryList";
 import SearchBar from "./SearchBar/SearchBar";
 import { useCountries } from "../hooks/useCountries";
